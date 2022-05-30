@@ -15,4 +15,6 @@ let pokemonList = [
   {number: '025', name: 'Pikachu', height: '1\' 04"', weight: '13.2 lbs', category: 'mouse', abilities: 'static', types: 'electric', weaknesses: 'ground'}
 ];
 
-console.log(pokemonList);
+for (let i = 0; i < pokemonList.length; i++) {
+  document.write(pokemonList[i].number +' '+ pokemonList[i].name +' '+ ' (height:' +' '+ pokemonList[i].height +')');
+}
