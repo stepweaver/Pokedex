@@ -1,3 +1,13 @@
+/*
+Table of Contents:
+0. Global: Spacing & Layout
+1. Global: Colors
+2. Global: Text
+3. Global: Interactive Elements
+4. Global: Primary Navigation
+5. Global: Footer
+*/
+
 body {
   background-color: #3D7DCA;
   font-family: 'Open Sans', sans-serif;
@@ -14,4 +24,3 @@ body {
   display: flex;
   width: 100%;
 }
-
