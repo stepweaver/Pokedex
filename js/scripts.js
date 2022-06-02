@@ -21,3 +21,5 @@ for (let i = 0; i < pokemonList.length; i++) {
     document.write(pokemonList[i].number +' '+ pokemonList[i].name +' '+ ' (height:' +' '+ pokemonList[i].height +')'+ ' - Wow, that\'s BIG!');
   }
 }
+
+/* How do I write to seaprate lines? Flex box? */
