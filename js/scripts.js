@@ -15,11 +15,15 @@ let pokemonList = [
   {number: '025', name: 'Pikachu', height: '1\' 04"', weight: '13.2 lbs', category: 'mouse', abilities: 'static', types: 'electric', weaknesses: 'ground'}
 ];
 
-for (let i = 0; i < pokemonList.length; i++) {
-  document.write("<p>" + pokemonList[i].number +' '+ pokemonList[i].name +' '+ ' (height:' +' '+ pokemonList[i].height +')');
-  if (pokemonList[i].height >= '6') {
-    document.write(pokemonList[i].number +' '+ pokemonList[i].name +' '+ ' (height:' +' '+ pokemonList[i].height +')'+ ' - Wow, that\'s BIG!' + "</p>");
+function printArrayDetails() {
+  for (let i = 0; i < pokemonList.length; i++) {
+    document.write("<p>" + pokemonList[i].number +' '+ pokemonList[i].name +' '+ ' (height:' +' '+ pokemonList[i].height +')'); /* Add "<p></p>" tags here to write to separate lines. */
+    if (pokemonList[i].height >= '6') {
+      document.write(' - Wow, that\'s BIG!' + "</p>");
+    }
   }
 }
 
-/* How do I write to seaprate lines? Flex box? */
+
+printArrayDetails();
+printArrayDetails();
