@@ -15,13 +15,20 @@ let pokemonList = [
   {number: '025', name: 'Pikachu', height: '1\' 04"', weight: '13.2 lbs', category: 'mouse', abilities: 'static', types: 'electric', weaknesses: 'ground'}
 ];
 
-function printArrayDetails() {
-  for (let i = 0; i < pokemonList.length; i++) {
-    document.write("<p>" + pokemonList[i].number +' '+ pokemonList[i].name +' '+ ' (height:' +' '+ pokemonList[i].height +')'); //Add "<p></p>" tags here to write to separate lines
-    if (pokemonList[i].height >= '6') {
+let pokemonList2 = [
+  {number: '026', name: 'Raichu', height: '2\' 07"', weight: '66.1 lbs', category: 'mouse', abilities: 'static', types: 'electric', weaknesses: 'ground'},
+  {number: '027', name: 'Sandshrew', height: '2\' 00"', weight: '26.5 lbs', category: 'mouse', abilities: 'sand veil', types: 'ground', weaknesses: ['water', 'grass', 'ice']},
+  {number: '028', name: 'Sandslash', height: '3\' 03"', weight: '65.0 lbs', category: 'mouse', abilities: 'sand veil', types: 'ground', weaknesses: ['water', 'grass', 'ice']}
+];
+
+function printArrayDetails(list) {
+  for (let i = 0; i < list.length; i++) {
+    document.write("<p>" + list[i].number +' '+ list[i].name +' '+ ' (height:' +' '+ list[i].height +')'); //Add "<p></p>" tags here to write to separate lines
+    if (list[i].height >= '6') {
       document.write(' - Wow, that\'s BIG!' + "</p>");
     }
   }
 }
 
-printArrayDetails();
+printArrayDetails(pokemonList);
+printArrayDetails(pokemonList2);
