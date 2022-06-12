@@ -26,4 +26,3 @@ function printArrayDetails() {
 
 
 printArrayDetails();
-printArrayDetails();
