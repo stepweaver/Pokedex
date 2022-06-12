@@ -17,12 +17,9 @@ let pokemonList = [
 
 function printArrayDetails() {
   for (let i = 0; i < pokemonList.length; i++) {
-    document.write("<p>" + pokemonList[i].number +' '+ pokemonList[i].name +' '+ ' (height:' +' '+ pokemonList[i].height +')'); /* Add "<p></p>" tags here to write to separate lines. */
+    document.write("<p>" + pokemonList[i].number +' '+ pokemonList[i].name +' '+ ' (height:' +' '+ pokemonList[i].height +')'); //Add "<p></p>" tags here to write to separate lines
     if (pokemonList[i].height >= '6') {
       document.write(' - Wow, that\'s BIG!' + "</p>");
     }
   }
 }
-
-
-printArrayDetails();
