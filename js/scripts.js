@@ -1,3 +1,5 @@
+let 
+
 let pokemonList = [
   {number: '001', name: 'Bulbasaur', height: '2\' 04"', weight: '15.2 lbs', category: 'seed', abilities: 'overgrow', types: ['grass', 'poison'], weaknesses: ['fire', 'psychic', 'flying', 'ice']},
   {number: '002', name: 'Ivysaur', height: '3\' 03"', weight: '28.7 lbs', category: 'seed', abilities: 'overgrow', types: ['grass', 'poison'], weaknesses: ['fire', 'psychic', 'flying', 'ice']},
@@ -12,23 +14,13 @@ let pokemonList = [
   {number: '013', name: 'Weedle', height: '1\' 00"', weight: '7.1 lbs', category: 'hairy bug', abilities: 'shield dust', types: ['bug', 'poison'], weaknesses: ['fire', 'psychic', 'flying', 'rock']},
   {number: '016', name: 'Pidgey', height: '1\' 00"', weight: '4.0 lbs', category: 'tiny bird', abilities: ['keen eye', 'tangled feet'], types: ['normal', 'flying'], weaknesses: ['electric', 'ice', 'rock']},
   {number: '019', name: 'Rattata', height: '1\' 00"', weight: '7.7 lbs', category: 'mouse', abilities: ['run away', 'guts'], types: 'normal', weaknesses: 'fighting'},
-  {number: '025', name: 'Pikachu', height: '1\' 04"', weight: '13.2 lbs', category: 'mouse', abilities: 'static', types: 'electric', weaknesses: 'ground'}
-];
-
-let pokemonList2 = [
+  {number: '025', name: 'Pikachu', height: '1\' 04"', weight: '13.2 lbs', category: 'mouse', abilities: 'static', types: 'electric', weaknesses: 'ground'},
   {number: '026', name: 'Raichu', height: '2\' 07"', weight: '66.1 lbs', category: 'mouse', abilities: 'static', types: 'electric', weaknesses: 'ground'},
   {number: '027', name: 'Sandshrew', height: '2\' 00"', weight: '26.5 lbs', category: 'mouse', abilities: 'sand veil', types: 'ground', weaknesses: ['water', 'grass', 'ice']},
   {number: '028', name: 'Sandslash', height: '3\' 03"', weight: '65.0 lbs', category: 'mouse', abilities: 'sand veil', types: 'ground', weaknesses: ['water', 'grass', 'ice']}
 ];
 
 pokemonList.forEach(function(list) {
-  document.write("<p>" + list.number +' '+ list.name +' '+ '(height:' +' '+ list.height +')');
-  if (list.height >= '6') {
-    document.write(' - Wow, that\'s BIG!' + "</p>");
-  }
-});
-
-pokemonList2.forEach(function(list) {
   document.write("<p>" + list.number +' '+ list.name +' '+ '(height:' +' '+ list.height +')');
   if (list.height >= '6') {
     document.write(' - Wow, that\'s BIG!' + "</p>");
