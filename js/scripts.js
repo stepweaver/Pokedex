@@ -21,14 +21,16 @@ let pokemonList2 = [
   {number: '028', name: 'Sandslash', height: '3\' 03"', weight: '65.0 lbs', category: 'mouse', abilities: 'sand veil', types: 'ground', weaknesses: ['water', 'grass', 'ice']}
 ];
 
-function printArrayDetails(list) {
-  for (let i = 0; i < list.length; i++) {
-    document.write("<p>" + list[i].number +' '+ list[i].name +' '+ ' (height:' +' '+ list[i].height +')'); //Add "<p></p>" tags here to write to separate lines
-    if (list[i].height >= '6') {
-      document.write(' - Wow, that\'s BIG!' + "</p>");
-    }
+pokemonList.forEach(function(list) {
+  document.write("<p>" + list.number +' '+ list.name +' '+ '(height:' +' '+ list.height +')');
+  if (list.height >= '6') {
+    document.write(' - Wow, that\'s BIG!' + "</p>");
   }
-}
+});
 
-printArrayDetails(pokemonList);
-printArrayDetails(pokemonList2);
+pokemonList2.forEach(function(list) {
+  document.write("<p>" + list.number +' '+ list.name +' '+ '(height:' +' '+ list.height +')');
+  if (list.height >= '6') {
+    document.write(' - Wow, that\'s BIG!' + "</p>");
+  }
+});
