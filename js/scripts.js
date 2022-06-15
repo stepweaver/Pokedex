@@ -1,4 +1,4 @@
-let 
+let pokemonRepository = (function () {
 
 let pokemonList = [
   {number: '001', name: 'Bulbasaur', height: '2\' 04"', weight: '15.2 lbs', category: 'seed', abilities: 'overgrow', types: ['grass', 'poison'], weaknesses: ['fire', 'psychic', 'flying', 'ice']},
@@ -19,6 +19,22 @@ let pokemonList = [
   {number: '027', name: 'Sandshrew', height: '2\' 00"', weight: '26.5 lbs', category: 'mouse', abilities: 'sand veil', types: 'ground', weaknesses: ['water', 'grass', 'ice']},
   {number: '028', name: 'Sandslash', height: '3\' 03"', weight: '65.0 lbs', category: 'mouse', abilities: 'sand veil', types: 'ground', weaknesses: ['water', 'grass', 'ice']}
 ];
+
+  function add(pokemon) {
+    pokemonList.push(pokemon);
+  }
+
+  function getAll() {
+    return pokemonList;
+  }
+
+  return {
+    add: add,
+    getAll: getAll
+  };
+})();
+
+let pokemonList = pokemonRepository.getAll();
 
 pokemonList.forEach(function(list) {
   document.write("<p>" + list.number +' '+ list.name +' '+ '(height:' +' '+ list.height +')');
