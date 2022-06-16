@@ -42,3 +42,8 @@ pokemonList.forEach(function(list) {
     document.write(' - Wow, that\'s BIG!' + "</p>");
   }
 });
+
+pokemonRepository.getAll();
+pokemonRepository.add({number: '150', name: 'Mewtwo', height: '6\' 07"', weight: '269.0 lbs', category: 'genetic', abilities: 'pressure', types: 'psychic', weaknesses: ['ghost', 'dark', 'bug']});
+
+console.log(pokemonList);
