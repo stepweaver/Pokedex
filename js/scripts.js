@@ -1,6 +1,6 @@
-let pokemonRepository = (function () {
+let pokemonRepository = (function () { //IIFE return
 
-let pokemonList = [
+let pokemonList = [ //wrapped in an array
   {number: '001', name: 'Bulbasaur', height: '2\' 04"', weight: '15.2 lbs', category: 'seed', abilities: 'overgrow', types: ['grass', 'poison'], weaknesses: ['fire', 'psychic', 'flying', 'ice']},
   {number: '002', name: 'Ivysaur', height: '3\' 03"', weight: '28.7 lbs', category: 'seed', abilities: 'overgrow', types: ['grass', 'poison'], weaknesses: ['fire', 'psychic', 'flying', 'ice']},
   {number: '003', name: 'Venusaur', height: '6\' 07"', weight: '220.5 lbs', category: 'seed', abilities: 'overgrow', types: ['grass', 'poison'], weaknesses: ['fire', 'psychic', 'flying', 'ice']},
@@ -19,7 +19,7 @@ let pokemonList = [
   {number: '027', name: 'Sandshrew', height: '2\' 00"', weight: '26.5 lbs', category: 'mouse', abilities: 'sand veil', types: 'ground', weaknesses: ['water', 'grass', 'ice']},
   {number: '028', name: 'Sandslash', height: '3\' 03"', weight: '65.0 lbs', category: 'mouse', abilities: 'sand veil', types: 'ground', weaknesses: ['water', 'grass', 'ice']}
 ];
-
+//functions are defined separately
   function add(pokemon) {
     pokemonList.push(pokemon);
   }
@@ -34,16 +34,17 @@ let pokemonList = [
   };
 })();
 
-let pokemonList = pokemonRepository.getAll();
+let pokemonList = pokemonRepository.getAll(); 
 
-pokemonList.forEach(function(list) {
+pokemonList.forEach(function(list) { //forEach() function added
   document.write("<p>" + list.number +' '+ list.name +' '+ '(height:' +' '+ list.height +')');
   if (list.height >= '6') {
     document.write(' - Wow, that\'s BIG!' + "</p>");
   }
 });
 
-pokemonRepository.getAll();
+//getAll and add return. Console to test.
 pokemonRepository.add({number: '150', name: 'Mewtwo', height: '6\' 07"', weight: '269.0 lbs', category: 'genetic', abilities: 'pressure', types: 'psychic', weaknesses: ['ghost', 'dark', 'bug']});
+pokemonRepository.getAll();
 
-console.log(pokemonList);
+console.log(pokemonRepository.getAll());
