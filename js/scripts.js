@@ -50,10 +50,13 @@ let pokemonList = [
     button.classList.add("button-class");
     listpokemon.appendChild(button);
     pokemonList.appendChild(listpokemon);
+    button.addEventListener('click', function (pokemonList) {
+      showDetails(pokemon)
+    })
   }
 
   function showDetails(pokemon) {
-    console.log(pokemon);
+    console.log(pokemon.number, pokemon.name);
   }
 
   return {
