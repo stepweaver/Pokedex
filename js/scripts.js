@@ -21,29 +21,49 @@ let pokemonList = [
 ];
 
   function add(pokemon) {
-    pokemonList.push(pokemon);
+    if (
+      typeof pokemon === "object" &&
+      "number" in pokemon &&
+      "name" in pokemon &&
+      "height" in pokemon &&
+      "weight" in pokemon &&
+      "category" in pokemon &&
+      "abilities" in pokemon &&
+      "types" in pokemon &&
+      "weaknesses" in pokemon
+    ) {
+      pokemonList.push(pokemon);
+    } else {
+      console.log("pokemon is not correct");
+    }
   }
 
   function getAll() {
     return pokemonList;
   }
 
+  function addListItem(pokemon) {
+    let pokemonList = document.querySelector(".pokemon-list");
+    let listpokemon = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("button-class");
+    listpokemon.appendChild(button);
+    pokemonList.appendChild(listpokemon);
+  }
+
   return {
     add: add,
-    getAll: getAll
+    getAll: getAll,
+    addListItem: addListItem
   };
 })();
-
-let pokemonList = pokemonRepository.getAll(); 
-
-pokemonList.forEach(function(list) { 
-  document.write("<p>" + list.number +' '+ list.name +' '+ '(height:' +' '+ list.height +')');
-  if (list.height >= '6') {
-    document.write(' - Wow, that\'s BIG!' + "</p>");
-  }
-});
 
 pokemonRepository.add({number: '150', name: 'Mewtwo', height: '6\' 07"', weight: '269.0 lbs', category: 'genetic', abilities: 'pressure', types: 'psychic', weaknesses: ['ghost', 'dark', 'bug']});
 pokemonRepository.getAll();
 
 console.log(pokemonRepository.getAll());
+
+pokemonRepository.getAll().forEach(function (pokemon) {
+  pokemonRepository.addListItem(pokemon);
+});
