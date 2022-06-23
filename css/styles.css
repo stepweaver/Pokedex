@@ -40,7 +40,7 @@ body {
 /* 3. Global: Interactive Elements */
 
 .button-class {
-  background-color: #4caf50;
+  background-color: red;
   border: none;
   color: white;
   padding: 16px 32px;
