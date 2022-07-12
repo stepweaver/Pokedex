@@ -1,48 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <title>Pokédex</title>
-    <link href="img/pokedex.svg">
+    <title>Pokémon</title>
   </head>
 
   <body>
-    <header class="page-header">
-      <nav class="navbar">
-        <a class="navbar-logo">
-          <img src="img/pokedex.svg" alt="pokedex logo" class="page-header__item">
-        </a>
-        <button class="navbar-toggle" type="button">
-          <span class="navbar-toggle-icon"></span>
-        </button>
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"> Home </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"> About </a>
-          </li>
-        </ul>
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <h1 class="section-title no-margin no-padding">Pokédex</h1>
+      <a class="navbar logo">
+        <img src="img/pokedex.svg" alt="pokedex logo" class="page-header__item">
+      </a>
+      <!-- NAV BAR -->
+      <nav class="main">
+        <div class="navbar">
+          <ul class="navlist">
+            <li class="navlistitem">
+              <a href="#">Home</a>
+            </li>
+            <li class="navlistitem">
+              <a href="#">News</a>
+            </li>
+            <li class="navlistitem">
+              <a href="#">About</a>
+            </li>
+            <li class="navlistitem">
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
       </nav>
-    </header>
-
-    <main>
-      <div class="container page-container">
-          <h1>Pokédex</h1>
-          <ul class="list-group pokemon-list"></ul>
+    </div>
+    <!-- POKEDEX FILTER -->
+    <section class="pokedex-filter">
+      <h2 class="secion-title no-margin no-padding">Pokédex Search</h2>
+      <div class="pokedex-filter-header">
+        <div class="filter-text-search">
+          <label>Name or Number</label>
+          <span class="twitter-typehead" style="position: relative; display: inline-block;">
+            <input data-type="name" type="text" class="button-white tt-hint" readonly="" autocomplete="off" spellcheck="false" tabindex="-1" dir="ltr" style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);">
+            <input data-type="name" type="text" id="searchInput" class="button-white tt-input" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top; background-color: transparent;">
+            <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Roboto, arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 8px; text-rendering: auto; text-transform: none;"></pre>
+            <div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;">
+              <div class="tt-dataset tt-dataset-0"></div>
+            </div>
+          </span>
+          <input type="submit" class="button button-search" value="Search" id="search">
+        </div>
       </div>
-    </main>
-    <ul class="pokemon-list">
-      <script src="js/promise-polyfill.js"></script>
-      <script src="js/fetch-polyfill.js"></script>
-      <script src="js/scripts.js"></script>
-      <button class="pokemon-button">
-        <span class="navbar-icon"></span>
-      </button>
-    </ul>
+    </section>
+    <!-- POKEDEX CONTAINER -->
+    <section class="pokedex container"></section>
+      <ul class="results" style="height: auto;">
+        <li class="animating" style="opacity: 1; top: 0px; left: 0px;">
+            <figure>
+              <a href="/us/pokedex/bulbasaur">
+                <img src="img/001.png">
+              </a>
+            </figure>
+            <div class="pokemon-info">
+              <p class="id">
+                <span class="number-prefix">#</span>
+                001
+              </p>
+              <h5>Bulbasaur</h5>
+              <div class="abilities">
+                <span class="pill background-color-grass">Grass</span>
+              </div>
+              <div class="abilities">
+                <span class="pill background-color-poison">Poison</span>
+              </div>
+            </div>
+        </li>
+        <li class="animating" style="opacity: 1; top: 0px; left: 0px;">
+            <figure>
+              <a href="/us/pokedex/ivysaur">
+                <img src="img/002.png">
+              </a>
+            </figure>
+            <div class="pokemon-info">
+              <p class="id">
+                <span class="number-prefix">#</span>
+                002
+              </p>
+              <h5>Ivysaur</h5>
+              <div class="abilities">
+                <span class="pill background-color-grass">Grass</span>
+              </div>
+              <div class="abilities">
+                <span class="pill background-color-poison">Poison</span>
+              </div>
+            </div>
+        </li>
+        <li class="animating" style="opacity: 1; top: 0px; left: 0px;">
+            <figure>
+              <a href="/us/pokedex/venusaur">
+                <img src="img/003.png">
+              </a>
+            </figure>
+            <div class="pokemon-info">
+              <p class="id">
+                <span class="number-prefix">#</span>
+                003
+              </p>
+              <h5>Venusaur</h5>
+              <div class="abilities">
+                <span class="pill background-color-grass">Grass</span>
+              </div>
+              <div class="abilities">
+                <span class="pill background-color-posoin">Poison</span>
+              </div>
+            </div>
+        </li>
+        <li class="animating" style="opacity: 1; top: 0px; left: 0px;">
+            <figure>
+              <a href="/us/pokedex/charmander">
+                <img src="img/004.png">
+              </a>
+            </figure>
+            <div class="pokemon-info">
+              <p class="id">
+                <span class="number-prefix">#</span>
+                004
+              </p>
+              <h5>Charmander</h5>
+              <div class="abilities">
+                <span class="pill background-color-fire">Fire</span>
+              </div>
+            </div>
+        </li>
+        <li class="animating" style="opacity: 1; top: 0px; left: 0px;">
+            <figure>
+              <a href="/us/pokedex/ccharmeleon">
+                <img src="img/005.png">
+              </a>
+            </figure>
+            <div class="pokemon-info">
+              <p class="id">
+                <span class="number-prefix">#</span>
+                005
+              </p>
+              <h5>Charmeleon</h5>
+              <div class="abilities">
+                <span class="pill background-color-fire">Fire</span>
+              </div>
+            </div>
+        </li>
+        <li class="animating" style="opacity: 1; top: 0px; left: 0px;">
+            <figure>
+              <a href="/us/pokedex/charizard">
+                <img src="img/006.png">
+              </a>
+            </figure>
+            <div class="pokemon-info">
+              <p class="id">
+                <span class="number-prefix">#</span>
+                006
+              </p>
+              <h5>Charizard</h5>
+              <div class="abilities">
+                <span class="pill background-color-fire">Fire</span>
+              </div>
+              <div class="abilities">
+                <span class="pill background-color-flying">Flying</span>
+              </div>
+            </div>
+        </li>
+        <li class="animating" style="opacity: 1; top: 0px; left: 0px;">
+            <figure>
+              <a href="/us/pokedex/squirtle">
+                <img src="img/007.png">
+              </a>
+            </figure>
+            <div class="pokemon-info">
+              <p class="id">
+                <span class="number-prefix">#</span>
+                007
+              </p>
+              <h5>Squirtle</h5>
+              <div class="abilities">
+                <span class="pill background-color-water">Water</span>
+              </div>
+            </div>
+        </li>
+        <li class="animating" style="opacity: 1; top: 0px; left: 0px;">
+            <figure>
+              <a href="/us/pokedex/wartortle">
+                <img src="img/008.png">
+              </a>
+            </figure>
+            <div class="pokemon-info">
+              <p class="id">
+                <span class="number-prefix">#</span>
+                008
+              </p>
+              <h5>Wartortle</h5>
+              <div class="abilities">
+                <span class="pill background-color-water">Water</span>
+              </div>
+            </div>
+        </li>
+        <li class="animating" style="opacity: 1; top: 0px; left: 0px;">
+            <figure>
+              <a href="/us/pokedex/blastoise">
+                <img src="img/009.png">
+              </a>
+            </figure>
+            <div class="pokemon-info">
+              <p class="id">
+                <span class="number-prefix">#</span>
+                009
+              </p>
+              <h5>Blastoise</h5>
+              <div class="abilities">
+                <span class="pill background-color-water">Water</span>
+              </div>
+            </div>
+        </li>
+        <li class="animating" style="opacity: 1; top: 0px; left: 0px;">
+            <figure>
+              <a href="/us/pokedex/caterpie">
+                <img src="img/010.png">
+              </a>
+            </figure>
+            <div class="pokemon-info">
+              <p class="id">
+                <span class="number-prefix">#</span>
+                010
+              </p>
+              <h5>Caterpie</h5>
+              <div class="abilities">
+                <span class="pill background-color-bug">Bug</span>
+              </div>
+            </div>
+        </li>
+        <li class="animating" style="opacity: 1; top: 0px; left: 0px;">
+            <figure>
+              <a href="/us/pokedex/metapod">
+                <img src="img/011.png">
+              </a>
+            </figure>
+            <div class="pokemon-info">
+              <p class="id">
+                <span class="number-prefix">#</span>
+                011
+              </p>
+              <h5>Metapod</h5>
+              <div class="abilities">
+                <span class="pill background-color-bug">Bug</span>
+              </div>
+            </div>
+        </li>
+        <li class="animating" style="opacity: 1; top: 0px; left: 0px;">
+            <figure>
+              <a href="/us/pokedex/butterfree">
+                <img src="img/012.png">
+              </a>
+            </figure>
+            <div class="pokemon-info">
+              <p class="id">
+                <span class="number-prefix">#</span>
+                012
+              </p>
+              <h5>Caterpie</h5>
+              <div class="abilities">
+                <span class="pill background-color-bug">Bug</span>
+              </div>
+              <div class="abilities">
+                <span class="pill background-color-flying">Flying</span>
+              </div>
+            </div>
+        </li>
+      </ul>
+      <strong>
+        <script src="js/promise-polyfill.js"></script>
+        <script src="js/fetch-polyfill.js"></script>
+        <script src="js/scripts.js"></script>
+      </strong>
+    </section>
   </body>
 </html>
