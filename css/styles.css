@@ -25,12 +25,29 @@ body {
 
 /* 0. Global: Spacing & Layout */
 
-.page-header {
-  padding: 70px 0;
-  text-align: center;
+.navlist {
+  padding: 50px;
 }
 
-.pokemon-list {
+.navlist li {
+  display: inline-block;
+  margin-left: 25px;
+  font-size: 20px;
+  list-style-type: none;
+}
+.page-header {
+  display: inline-flex;
+  width: 95%;
+  padding: 20px;
+}
+
+.pokedex-filter {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.results {
   margin: auto;
   width: 50%;
   border: 3px solid yellow;
@@ -40,7 +57,7 @@ body {
 
 /* 3. Global: Interactive Elements */
 
-.button-class {
+/* .button-class {
   background-color: red;
   border: none;
   color: white;
@@ -56,4 +73,4 @@ body {
   background-color: white;
   color: black;
   border: 2px solid red;
-}
+} */
