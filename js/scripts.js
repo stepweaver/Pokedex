@@ -68,7 +68,6 @@ let pokemonRepository = (function () {
     });
   }
   // MODAL CONTAINER
-
   let modalContainer = document.querySelector('#modal-container');
   let modalClose = document.querySelector('#modal-close');
   let modalTitle = document.querySelector('#modal-titel');
