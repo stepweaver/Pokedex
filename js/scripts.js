@@ -78,7 +78,7 @@ let pokemonRepository = (function() {
     });
   } 
 
-  // DISPLAY MODAL
+  // MODAL
   // function showModal(title, text) {
   //   modalContainer.innerHTML = '';
   //   let modal = document.createElement('div');
