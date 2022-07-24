@@ -74,11 +74,12 @@ let pokemonRepository = (function() {
 
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function() {
-      showModal(pokemon);
+      console.log(pokemon);
     });
   } 
 
-  // function showModal(pokemon) {
+  // DISPLAY MODAL
+  // function showModal(title, text) {
   //   modalContainer.innerHTML = '';
   //   let modal = document.createElement('div');
   //   modal.classList.add('modal');
@@ -89,7 +90,7 @@ let pokemonRepository = (function() {
   //   closeButtonElement.addEventListener('click', hideModal);
 
   //   let titleElement = document.createElement('h1');
-  //   titleElement.innerText = pokemon.name;
+  //   titleElement.innerText = title;
 
   //   let contentElement = document.createelement('p');
   //   contentElement.innerText = text;
