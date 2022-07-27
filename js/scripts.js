@@ -76,12 +76,6 @@ let pokemonRepository = (function() {
     loadDetails(pokemon).then(function() {
       showModal(pokemon);
     });
-  } 
-
-  // MODAL
-  function showModal(pokemon) {
-    let modalContainer = document.querySelector('#modal-container');
-    modalContainer.classList.add('is-visible');
   }
 
   return {
