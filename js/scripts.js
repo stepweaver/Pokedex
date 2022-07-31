@@ -57,30 +57,13 @@ let showModal = (pokemonList) => {
     </div>
    `;
 
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      closeModal();
-    }
-  });
-  
-  // // let  closeButtonElement = document.createElement('button');
-  // // closeButtonElement.classList.add('modal-close');
-  // // closeButtonElement.innerText = 'Close';
-  // // closeButtonElement.addEventListener('click', closeModal);
-
-  // // window.addEventListener('keydown', (e) => {
-  // //   if (e.key === 'Escape') {
-  // //     closeModal();
-  // //   }
-  // };
-
   pokedex.innerHTML = htmlString +  pokedex.innerHTML;
   console.log(htmlString);
 };
 
 let closeModal = () => {
   let modal = document.querySelector('.modal');
-  // modal.parentElement.removeChild(modal); FIX THIS!!!!!
+  modal.parentElement.removeChild(modal);           // why do I have to click the Close button twice unless the object is in the Cache?
 };
 
 fetchPokemon();
