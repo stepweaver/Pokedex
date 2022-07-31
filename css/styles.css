@@ -11,6 +11,7 @@ body {
 }
 
 /* General card styling */
+
 .card {
   list-style: none;
   padding: 20px;
@@ -80,7 +81,12 @@ h1 {
 }
 
 /* modal */
-.modal {
+
+#modal-container {
+  display: none;
+}
+
+#modal-container.is-visibl {
   position: fixed;
   top: 0;
   left: 0;
@@ -91,6 +97,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  display: block;
 }
 
 #modal-close {
