@@ -67,4 +67,10 @@ let closeModal = () => {
   modal.parentElement.removeChild(modal);
 };
 
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeModal();
+  }
+});
+
 fetchPokemon();
