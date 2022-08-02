@@ -42,6 +42,7 @@ body {
 /* add card animation */
 .card:hover {
   animation: bounce 0.5s linear;
+  cursor: pointer;
 }
 
 @keyframes bounce {
@@ -82,11 +83,7 @@ h1 {
 
 /* modal */
 
-#modal-container {
-  display: none;
-}
-
-#modal-container.is-visibl {
+.modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -97,8 +94,9 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: block;
 }
+
+/* position idnumber to upper corner within modal */
 
 #modal-close {
   position: absolute;
