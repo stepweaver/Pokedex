@@ -73,4 +73,13 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
+window.addEventListener('click', (e) => {
+  let target = e.target;
+  if (target === modal) {
+    closeModal();
+  }
+});
+
+// need to add 'click' outside of modal to exit
+
 fetchPokemon();
