@@ -46,7 +46,6 @@ let showModal = (pokemonList) => {
     <div class="modal">
       <button id="modal-close" onclick="closeModal()">Close</button>
       <div class="card">
-      <div class="idnumber"><strong>${pokemonList.id}</strong></div>
         <img class="card-image" src='${image}' />
         <h2 class="card-title">${pokemonList.name}</h2>
         <p>
