@@ -40,6 +40,7 @@ let selectPokemon = async (id) => {
 };
 
 let showModal = (pokemonList) => {
+  let pokedex = document.querySelector('#modal-container');
   let type = pokemonList.types.map( type => type.type.name).join(', ');
   let image = pokemonList.sprites['front_default'];
   let htmlString = `
@@ -72,12 +73,12 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
-window.addEventListener('click', (e) => {
-  let target = e.target;
-  if (target === modal) {
-    closeModal();
-  }
-});
+// window.addEventListener('click', (e) => {
+//   let target = e.target;
+//   if (target === modalContainer) {
+//     closeModal();
+//   }
+// });
 
 // need to add 'click' outside of modal to exit
 
