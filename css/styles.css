@@ -11,14 +11,11 @@ body {
 }
 
 /* General card styling */
-
 .card {
   list-style: none;
   padding: 20px;
   /* background-color: #9a9ea1; */
   text-align: center;
-  /* border-radius: 10px / 50px;
-  box-shadow: 3px 5px 5px rgb(197, 197, 197); */
   cursor: pointer;
 }
 
@@ -36,7 +33,7 @@ body {
 }
 
 .card-image {
-  width: 75%;
+  width: 60%;
 }
 
 /* add card animation */
@@ -84,6 +81,7 @@ h1 {
 /* modal */
 
 .modal {
+  border-radius: 25px;
   height: 50vh;
   width: 75vh;
   overflow: auto;
