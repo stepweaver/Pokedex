@@ -40,7 +40,6 @@ let selectPokemon = async (id) => {
 };
 
 let showModal = (pokemonList) => {
-  let pokedex = document.querySelector('#modal-container');
   let type = pokemonList.types.map( type => type.type.name).join(', ');
   let image = pokemonList.sprites['front_default'];
   let htmlString = `
