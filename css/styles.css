@@ -84,21 +84,22 @@ h1 {
 /* modal */
 
 .modal {
-  position: fixed;
+  height: 50vh;
+  width: 75vh;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
-  width: 100vw;
+  bottom: 0;
+  right: 0;
   z-index: 999;
-  overflow: auto;
-  background: #4D4D4D;
+  background: rgb(25, 25, 25);
   opacity: 0.95;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-/* position idnumber to upper corner within modal */
 
 #modal-close {
   position: absolute;
