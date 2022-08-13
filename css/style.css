@@ -1,0 +1,150 @@
+body {
+  background-color: rgb(77, 77, 77);
+  margin: 0;
+  font-family: 'Open Sans', sans-derif;
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 1.6
+}
+
+/* General card styling */
+.card {
+  list-style: none;
+  padding: 20px;
+  /* background-color: #9a9ea1; */
+  text-align: center;
+  cursor: pointer;
+}
+
+.card-title {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.card-subtitle {
+  font-weight: lighter;
+  color: #f5f5f5;
+  margin-top: 5px;
+}
+
+.card-image {
+  width: 60%;
+}
+
+/* add card animation */
+.card:hover {
+  animation: bounce 0.5s linear;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  20%{
+    transform: translateY(-8px);
+  }
+  40%{
+    transform: translateY(-10px);
+  }
+  60%{
+    transform: translateY(-6px);
+  }
+  80%{
+    transform: translateY(-4px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+/* pokedex container */
+#pokedex {
+  padding-inline-start: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 20px;
+}
+
+.container {
+  padding: 80px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 54px;
+}
+
+/* modal */
+
+.modal {
+  border-radius: 25px;
+  height: 50vh;
+  width: 75vh;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  background: rgb(25, 25, 25);
+  opacity: 0.95;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+button {
+  background-color: #3D7DCA;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  transition: transform 100ms;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: translateY(-1px);
+  box-shadow: 0px 1px 2px darkblue;
+}
+
+/* header elements */
+.navlist {
+  padding: 50px;
+}
+
+.navlist li {
+  display: inline-block;
+  margin-left: 25px;
+  font-size: 20px;
+  list-style-type: none;
+}
+
+.page-header {
+  display: flex;
+  width: 50%;
+  padding: 10px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+/* pokedex search */
+.pokedex-filter {
+  display: grid;
+  width: 50%;
+  padding: 10px;
+  margin: 0 auto;
+  justify-content: center;
+}
