@@ -80,13 +80,13 @@ h1 {
 
 /* modal */
 
-.modal {
+.modal { 
   border-radius: 25px;
   height: 50vh;
   width: 75vh;
   overflow: auto;
   margin: auto;
-  position: absolute;
+  position: fixed; 
   top: 0;
   left: 0;
   bottom: 0;
@@ -106,7 +106,10 @@ h1 {
 }
 
 button {
-  background-color: #3D7DCA;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: orangered;
   padding: 10px 20px;
   border: none;
   color: white;
@@ -116,8 +119,8 @@ button {
 
 button:hover {
   cursor: pointer;
-  transform: translateY(-1px);
-  box-shadow: 0px 1px 2px darkblue;
+  transform: translateY(-2px);
+  box-shadow: 0px 2px 3px black;
 }
 
 /* header elements */
