@@ -1,37 +1,71 @@
-let pokedex = document.getElementById("pokedex");
+let pokedex = document.getElementById('pokedex');
+let pokeCache = {};
   
 console.log(pokedex);
 
 // fetch to get data from pokeapi.
-let fetchPokemon = () => {
-
-  let promises = [];
-  for (let i = 1; i <= 150; i++) {
-    let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-    promises.push(fetch(url).then( res => res.json()));
-  }
-
-  Promise.all(promises).then( results => {
-    let pokemon = results.map( data => ({
-      name: data.name,
-        id: data.id,
-        image: data.sprites['front_default'],
-        type: data.types.map( type => type.type.name).join(', ')
-    }));
-    displayPokemon(pokemon);
-  });
+let fetchPokemon = async () => {
+  let url = `https://pokeapi.co/api/v2/pokemon/?limit=150`;
+  let res = await fetch(url);
+  let data = await res.json();
+  let pokemon = data.results.map((result, index) => ({
+    ... result, // ... result will simply pass everything from the api through to the object.
+    id: index + 1,
+    image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`
+  }));
+  console.log(data.results);
+  displayPokemon(pokemon);
 };
 
+// displays pokemon in pokedex container.
 let displayPokemon = (pokemon) => {
-  console.log(pokemon);
   let pokemonHTMLString = pokemon.map( pokeman => `
-  <li class="card">
+  <li class="card" onclick="selectPokemon(${pokeman.id})">
     <img class="card-image" src="${pokeman.image}" />
     <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
-    <p class="card-subtitle">Type: ${pokeman.type}</p>
   </li>
   `).join('');
   pokedex.innerHTML = pokemonHTMLString;
 };
+
+let selectPokemon = async (id) => {
+  if(!pokeCache[id]){
+    let url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    let res = await fetch(url);
+    let pokeman = await res.json();
+    pokeCache[id] = pokeman;
+    showModal(pokeman);
+  } else
+  showModal(pokeCache[id]);
+};
+
+let showModal = (pokeman) => {
+  let type = pokeman.types.map( type => type.type.name).join(', ');
+  let image = pokeman.sprites['front_default'];
+  let htmlString = `
+    <div class="modal">
+      <button id="modal-close" onclick="hideModal()">Close</button>
+    <div class="card">
+      <img class="card-image" src="${image}" />
+      <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
+      <p><small>Height: </small>${pokeman.height} dm | <small>Weight: </small>${pokeman.weight} hg | <small>Type: </small>${type}
+    </div>
+    </div>`;
+    pokedex.innerHTML = htmlString + pokedex.innerHTML; 
+};
+
+let hideModal = () => {
+  let modal = document.querySelector('.modal');
+  modal.parentElement.removeChild(modal);
+}
+
+window.addEventListener('keydown', (e) => {
+  let modal = document.querySelector('.modal');
+  if (e.key === 'Escape') {
+    hideModal(modal);
+  };
+});
+
+/* need addEventListener to close when clicking outside of modal */
 
 fetchPokemon();
