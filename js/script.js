@@ -1,7 +1,5 @@
 let pokedex = document.getElementById('pokedex');
 let pokeCache = {};
-  
-console.log(pokedex);
 
 // fetch to get data from pokeapi.
 let fetchPokemon = async () => {
@@ -13,7 +11,6 @@ let fetchPokemon = async () => {
     id: index + 1,
     image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`
   }));
-  console.log(data.results);
   displayPokemon(pokemon);
 };
 
@@ -51,7 +48,7 @@ let showModal = (pokeman) => {
       <p><small>Height: </small>${pokeman.height} dm | <small>Weight: </small>${pokeman.weight} hg | <small>Type: </small>${type}
     </div>
     </div>`;
-    pokedex.innerHTML = htmlString + pokedex.innerHTML; 
+    pokedex.innerHTML = htmlString + pokedex.innerHTML;
 };
 
 let hideModal = () => {
@@ -62,7 +59,7 @@ let hideModal = () => {
 window.addEventListener('keydown', (e) => {
   let modal = document.querySelector('.modal');
   if (e.key === 'Escape') {
-    hideModal(modal);
+    hideModal();
   };
 });
 
