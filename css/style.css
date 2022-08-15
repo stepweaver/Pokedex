@@ -68,7 +68,7 @@ body {
   grid-gap: 20px;
 }
 
-.container {
+#container {
   padding: 80px;
   margin: 0 auto;
 }
@@ -83,7 +83,7 @@ h1 {
 .modal { 
   border-radius: 25px;
   height: 50vh;
-  width: 75vh;
+  width: 50vw;
   overflow: auto;
   margin: auto;
   position: fixed; 
