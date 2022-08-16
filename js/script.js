@@ -65,4 +65,8 @@ window.addEventListener('keydown', (e) => {
 
 /* need addEventListener to close when clicking outside of modal */
 
+window.addEventListener('click', function(e) {
+  hideModal();
+}, true);
+
 fetchPokemon();
