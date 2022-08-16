@@ -82,8 +82,8 @@ h1 {
 
 .modal { 
   border-radius: 25px;
-  height: 50vh;
-  width: 50vw;
+  height: 100%;
+  width: 100%;
   overflow: auto;
   margin: auto;
   position: fixed; 
