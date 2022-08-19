@@ -63,9 +63,8 @@ window.addEventListener('keydown', (e) => {
   };
 });
 
-/* need addEventListener to close when clicking outside of modal */
-
 window.addEventListener('click', function(e) {
+  if (document.querySelector('.modal'))
   hideModal();
 }, true);
 
