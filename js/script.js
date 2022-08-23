@@ -54,7 +54,7 @@ let showModal = (pokeman) => {
 let hideModal = () => {
   let modal = document.querySelector('.modal');
   modal.parentElement.removeChild(modal);
-}
+};
 
 window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
