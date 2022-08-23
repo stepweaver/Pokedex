@@ -57,13 +57,12 @@ let hideModal = () => {
 }
 
 window.addEventListener('keydown', (e) => {
-  let modal = document.querySelector('.modal');
   if (e.key === 'Escape') {
     hideModal();
   };
 });
 
-window.addEventListener('click', function(e) {
+window.addEventListener('click', (e) => {
   if (document.querySelector('.modal'))
   hideModal();
 }, true);
