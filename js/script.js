@@ -62,9 +62,9 @@ window.addEventListener('keydown', (e) => {
   };
 });
 
-window.addEventListener('click', (e) => {
-  if (document.querySelector('.modal'))
-  hideModal();
-}, true);
+// window.addEventListener('click', (e) => {
+//   if (document.querySelector('.modal'))
+//   hideModal();
+// }, true);
 
 fetchPokemon();
