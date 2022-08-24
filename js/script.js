@@ -19,7 +19,7 @@ let displayPokemon = (pokemon) => {
   let pokemonHTMLString = pokemon.map( pokeman => `
   <li class="card" onclick="selectPokemon(${pokeman.id})">
     <img class="card-image" src="${pokeman.image}" />
-    <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
+    <h2 class="card-title">${pokeman.name}</h2>
   </li>
   `).join('');
   pokedex.innerHTML = pokemonHTMLString;
@@ -40,11 +40,11 @@ let showModal = (pokeman) => {
   let type = pokeman.types.map( type => type.type.name).join(', ');
   let image = pokeman.sprites['front_default'];
   let htmlString = `
-    <div class="modal">
+    <div id="modal" class="visible">
       <button id="modal-close" onclick="hideModal()">Close</button>
-    <div class="card">
+    <div class="modal-card">
       <img class="card-image" src="${image}" />
-      <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
+      <h2 class="card-title"><big>#${pokeman.id}</big> ${pokeman.name}</h2>
       <p><small>Height: </small>${pokeman.height} dm | <small>Weight: </small>${pokeman.weight} hg | <small>Type: </small>${type}
     </div>
     </div>`;
@@ -52,8 +52,8 @@ let showModal = (pokeman) => {
 };
 
 let hideModal = () => {
-  let modal = document.querySelector('.modal');
-  modal.parentElement.removeChild(modal);
+  let modal = document.querySelector('#modal');
+  modal.classList.remove('visible');
 };
 
 window.addEventListener('keydown', (e) => {
@@ -62,9 +62,9 @@ window.addEventListener('keydown', (e) => {
   };
 });
 
-// window.addEventListener('click', (e) => {
-//   if (document.querySelector('.modal'))
-//   hideModal();
-// }, true);
+window.addEventListener('click', (e) => {
+  if (document.querySelector('#modal'))
+  hideModal();
+}, true);
 
 fetchPokemon();
