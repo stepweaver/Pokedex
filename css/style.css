@@ -14,7 +14,7 @@ body {
 .card {
   list-style: none;
   padding: 20px;
-  background-color: none;
+  background: none;
   text-align: center;
   cursor: pointer;
 }
@@ -33,7 +33,10 @@ body {
 }
 
 .card-image {
-  height: 180px;
+  height: 250px;
+  width: 250px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 /* card animation */
