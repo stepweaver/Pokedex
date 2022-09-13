@@ -1,4 +1,4 @@
-let pokedex = document.getElementById('pokedex');
+let pokedex = document.querySelector('.list-group');
 let pokeCache = {};
 
 // fetch to get data from pokeapi.
@@ -17,10 +17,10 @@ let fetchPokemon = async () => {
 // displays pokemon in pokedex container.
 let displayPokemon = (pokemon) => {
   let pokemonHTMLString = pokemon.map( pokeman => `
-  <li class="card" onclick="selectPokemon(${pokeman.id})">
-    <img class="card-image" src="${pokeman.image}" />
-    <h2 class="card-title">${pokeman.name}</h2>
-  </li>
+    <li class="card list-group-item" onclick="selectPokemon(${pokeman.id})">
+      <img class="card-image" src="${pokeman.image}" />
+      <h2 class="card-title">${pokeman.name}</h2>
+    </li>
   `).join('');
   pokedex.innerHTML = pokemonHTMLString;
 };
