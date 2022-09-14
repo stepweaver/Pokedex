@@ -64,7 +64,7 @@ body {
 }
 
 /* pokedex container */
-#pokedex {
+.list-group {
   padding-inline-start: 0;
   margin: 0 auto;
   display: grid;
