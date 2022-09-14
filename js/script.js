@@ -43,12 +43,20 @@ let showModal = (pokeman) => {
   let image = pokeman.sprites['front_default'];
   let htmlString = `
     <div id="modal" class="visible">
-      <button id="modal-close" onclick="hideModal()">Close</button>
-    <div class="modal-card">
-      <img class="card-image" src="${image}" />
-      <h2 class="card-title"><big>#${pokeman.id}</big> ${pokeman.name}</h2>
-      <p><small>Height: </small>${pokeman.height} dm | <small>Weight: </small>${pokeman.weight} hg | <small>Type: </small>${type}
-    </div>
+      <div class="modal-card" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-header">
+            <h2 class="card-title"><big>#${pokeman.id}</big> ${pokeman.name}</h2>
+            <button id="modal-close" class="close" data-dismiss="modal-card" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img class="card-image" src="${image}" />
+            <p><small>Height: </small>${pokeman.height} dm | <small>Weight: </small>${pokeman.weight} hg | <small>Type: </small>${type}
+          </div>
+        </div>
+      </div>
     </div>`;
     pokedex.innerHTML = htmlString + pokedex.innerHTML;
 };
