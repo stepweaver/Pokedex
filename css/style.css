@@ -129,7 +129,7 @@ button:hover {
 }
 
 /* header elements */
-.navlist {
+/* .navlist {
   padding: 50px;
 }
 
@@ -138,15 +138,15 @@ button:hover {
   margin-left: 25px;
   font-size: 20px;
   list-style-type: none;
-}
+} */
 
-.page-header {
+/* .page-header {
   display: flex;
   width: 50%;
   padding: 10px;
   margin: 0 auto;
   justify-content: center;
-}
+} */
 
 /* pokedex search */
 .pokedex-filter {
