@@ -25,8 +25,6 @@ let displayPokemon = (pokemon) => {
   pokedex.innerHTML = pokemonHTMLString;
 };
 
-// How do I get this to display in grid and not just one long list?
-
 let selectPokemon = async (id) => {
   if(!pokeCache[id]){
     let url = `https://pokeapi.co/api/v2/pokemon/${id}`;
