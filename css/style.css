@@ -11,10 +11,14 @@
 } */
 
 /* General card styling */
+
+.card {
+  background: none;
+}
+
 /* .card {
   list-style: none;
   padding: 20px;
-  background: rgb(155, 155, 155);
   text-align: center;
   cursor: pointer;
   border: none;
@@ -41,7 +45,8 @@
 } */
 
 /* card animation */
-/* .card:hover {
+
+.card:hover {
   animation: bounce 0.5s linear;
   cursor: pointer;
 }
@@ -62,9 +67,10 @@
   100%{
     transform: translateY(0px);
   }
-} */
+}
 
 /* pokedex container */
+
 .list-group {
   padding-inline-start: 0;
   margin: 0 auto;
@@ -79,6 +85,7 @@
 } */
 
 /* modal */
+
 /* #modal {
   display: none;
 }
@@ -129,6 +136,7 @@ button:hover {
 } */
 
 /* header elements */
+
 /* .navlist {
   padding: 50px;
 }
@@ -149,6 +157,7 @@ button:hover {
 } */
 
 /* pokedex search */
+
 /* .pokedex-filter {
   display: grid;
   width: 50%;
