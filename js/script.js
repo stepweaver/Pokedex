@@ -17,7 +17,23 @@ let fetchPokemon = async () => {
 // displays pokemon in pokedex container.
 let displayPokemon = (pokemon) => {
   let pokemonHTMLString = pokemon.map( pokeman => `
-    <li class="card list-group-item btn btn-dark text-capitalize text-light" aria-pressed="false" autocomplete="off" onclick="selectPokemon(${pokeman.id})"> 
+    <li class="card list-group-item btn btn-dark text-capitalize text-light" aria-pressed="false" autocomplete="off" onclick="selectPokemon(${pokeman.id})">
+    <div id="modal" class="visible">
+    <div class="modal-card" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-header">
+          <h2 class="card-title"><big>#${pokeman.id}</big> ${pokeman.name}</h2>
+          <button id="modal-close" class="close" data-dismiss="modal-card" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img class="card-image" src="${image}" />
+          <p><small>Height: </small>${pokeman.height} dm | <small>Weight: </small>${pokeman.weight} hg | <small>Type: </small>${type}
+        </div>
+      </div>
+    </div>
+  </div>`;
       <img class="card-image" src="${pokeman.image}" />
       <h2 class="card-title">${pokeman.name}</h2>
     </li>
@@ -36,28 +52,28 @@ let selectPokemon = async (id) => {
   showModal(pokeCache[id]);
 };
 
-let showModal = (pokeman) => {
-  let type = pokeman.types.map( type => type.type.name).join(', ');
-  let image = pokeman.sprites['front_default'];
-  let htmlString = `
-    <div id="modal" class="visible">
-      <div class="modal-card" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-header">
-            <h2 class="card-title"><big>#${pokeman.id}</big> ${pokeman.name}</h2>
-            <button id="modal-close" class="close" data-dismiss="modal-card" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img class="card-image" src="${image}" />
-            <p><small>Height: </small>${pokeman.height} dm | <small>Weight: </small>${pokeman.weight} hg | <small>Type: </small>${type}
-          </div>
-        </div>
-      </div>
-    </div>`;
-    pokedex.innerHTML = htmlString + pokedex.innerHTML;
-};
+// let showModal = (pokeman) => {
+//   let type = pokeman.types.map( type => type.type.name).join(', ');
+//   let image = pokeman.sprites['front_default'];
+//   let htmlString = `
+//     <div id="modal" class="visible">
+//       <div class="modal-card" tabindex="-1" role="dialog">
+//         <div class="modal-dialog" role="document">
+//           <div class="modal-header">
+//             <h2 class="card-title"><big>#${pokeman.id}</big> ${pokeman.name}</h2>
+//             <button id="modal-close" class="close" data-dismiss="modal-card" aria-label="Close">
+//               <span aria-hidden="true">&times;</span>
+//             </button>
+//           </div>
+//           <div class="modal-body">
+//             <img class="card-image" src="${image}" />
+//             <p><small>Height: </small>${pokeman.height} dm | <small>Weight: </small>${pokeman.weight} hg | <small>Type: </small>${type}
+//           </div>
+//         </div>
+//       </div>
+//     </div>`;
+//     pokedex.innerHTML = htmlString + pokedex.innerHTML;
+// };
 
 let hideModal = () => {
   let modal = document.querySelector('#modal');
