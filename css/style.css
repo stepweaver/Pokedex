@@ -7,21 +7,16 @@ body {
   font-stretch: 100%;
   font-size: 16px;
   color: #ffffff;
-  line-height: 1.6;
+  line-height: 1.6
 }
 
 /* General card styling */
-
-.card {
-  background: none;
-}
-
 .card {
   list-style: none;
   padding: 20px;
+  background-color: none;
   text-align: center;
   cursor: pointer;
-  border: none;
 }
 
 .card-title {
@@ -38,40 +33,39 @@ body {
 }
 
 .card-image {
-  height: 250px;
-  width: 250px;
-  text-align: center;
-  margin: 0 auto;
+  height: 180px;
 }
 
 /* card animation */
-
 .card:hover {
   animation: bounce 0.5s linear;
   cursor: pointer;
 }
 
 @keyframes bounce {
-  20%{
+  20% {
     transform: translateY(-8px);
   }
-  40%{
+
+  40% {
     transform: translateY(0px);
   }
-  60%{
+
+  60% {
     transform: translateY(-4px);
   }
-  80%{
+
+  80% {
     transform: translateY(-2px);
   }
-  100%{
+
+  100% {
     transform: translateY(0px);
   }
 }
 
 /* pokedex container */
-
-.list-group {
+#pokedex {
   padding-inline-start: 0;
   margin: 0 auto;
   display: grid;
@@ -136,7 +130,6 @@ button:hover {
 }
 
 /* header elements */
-
 .navlist {
   padding: 50px;
 }
@@ -157,7 +150,6 @@ button:hover {
 }
 
 /* pokedex search */
-
 .pokedex-filter {
   display: grid;
   width: 50%;
