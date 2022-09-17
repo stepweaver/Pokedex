@@ -12,23 +12,28 @@
 </head>
 
 <body class="bg-secondary">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(Current)</span></a>
-        <a class="nav-item nav-link" href="#">About</a>
-        <a class="nav-item nav-link" href="#">News</a>
-        <a class="nav-item nav-link" href="#">Contact</a>
-      </div>"
-    </div>
-  </nav>
+  <div class="page-header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+      <a class="navbar logo">
+        <img src="img/pokedex.svg" alt="pokedex logo" class="page-header__item">
+      </a>
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(Current)</span></a>
+          <a class="nav-item nav-link" href="#">About</a>
+          <a class="nav-item nav-link" href="#">News</a>
+          <a class="nav-item nav-link" href="#">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </div>
   <!-- POKEDEX FILTER -->
-  <section class="pokedex-filter">
-    <h2 class="secion-title no-margin no-padding">Pokédex Search</h2>
+  <section class="pokedex-filter text-light">
+    <p class="section-title no-margin no-padding fw-bold fs-3">Pokédex Search</p>
     <div class="pokedex-filter-header">
       <div class="filter-text-search">
         <label>Name or Number</label>
@@ -53,7 +58,7 @@
   <!-- Need to add JS for filter -->
 
   <!-- POKEDEX CONTAINER -->
-  <h1>Pokédex</h1>
+  <p class="text-light fw-bold fs-1">Pokédex</p>
   <div class="pokedex bg-seconday"></div>
     <div class="list-group"></div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
