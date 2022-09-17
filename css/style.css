@@ -38,7 +38,7 @@
 }
 
 /* card animation */
-/* .card:hover {
+.card:hover {
   animation: bounce 0.5s linear;
   cursor: pointer;
 }
@@ -63,7 +63,7 @@
   100% {
     transform: translateY(0px);
   }
-} */
+}
 
 /* pokedex container */
 .list-group {
