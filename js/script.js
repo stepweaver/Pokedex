@@ -17,7 +17,7 @@ let fetchPokemon = async () => {
 // displays pokemon in pokedex container.
 let displayPokemon = (pokemon) => {
   let pokemonHTMLString = pokemon.map( pokeman => `
-  <li class="card" onclick="selectPokemon(${pokeman.id})">
+  <li class="list-group-item text-light text-center" onclick="selectPokemon(${pokeman.id})">
     <img class="card-image" src="${pokeman.image}" />
     <h2 class="card-title">${pokeman.name}</h2>
   </li>
