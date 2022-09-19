@@ -1,4 +1,4 @@
-let pokedex = document.querySelector('.list-group');
+let pokedex = document.getElementById('pokedex');
 let pokeCache = {};
 
 // fetch to get data from pokeapi.
@@ -16,11 +16,11 @@ let fetchPokemon = async () => {
 
 // displays pokemon in pokedex container.
 let displayPokemon = (pokemon) => {
-  let pokemonHTMLString = pokemon.map(pokeman => `
-    <li class="card list-group-item bg-transparent text-light btn btn-dark text-capitalize" onclick="selectPokemon(${pokeman.id})">
-      <img class="card-image" src="${pokeman.image}" />
-      <h2 class="card-title">${pokeman.name}</h2>
-    </li>
+  let pokemonHTMLString = pokemon.map( pokeman => `
+  <li class="card" onclick="selectPokemon(${pokeman.id})">
+    <img class="card-image" src="${pokeman.image}" />
+    <h2 class="card-title">${pokeman.name}</h2>
+  </li>
   `).join('');
   pokedex.innerHTML = pokemonHTMLString;
 };
@@ -42,7 +42,7 @@ let showModal = (pokeman) => {
   let htmlString = `
     <div id="modal" class="visible">
       <button id="modal-close" onclick="hideModal()">Close</button>
-    <div class="modal-card text-light">
+    <div class="modal-card">
       <img class="card-image" src="${image}" />
       <h2 class="card-title"><big>#${pokeman.id}</big> ${pokeman.name}</h2>
       <p><small>Height: </small>${pokeman.height} dm | <small>Weight: </small>${pokeman.weight} hg | <small>Type: </small>${type}
