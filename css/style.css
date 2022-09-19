@@ -1,4 +1,4 @@
-body {
+/* body {
   background-color: rgb(77, 77, 77);
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -8,10 +8,10 @@ body {
   font-size: 16px;
   color: #ffffff;
   line-height: 1.6
-}
+} */
 
 /* General card styling */
-.card {
+/* .card {
   list-style: none;
   padding: 20px;
   background-color: none;
@@ -34,10 +34,10 @@ body {
 
 .card-image {
   height: 180px;
-}
+} */
 
 /* card animation */
-.card:hover {
+/* .card:hover {
   animation: bounce 0.5s linear;
   cursor: pointer;
 }
@@ -62,10 +62,10 @@ body {
   100% {
     transform: translateY(0px);
   }
-}
+} */
 
 /* pokedex container */
-#pokedex {
+/* #pokedex {
   padding-inline-start: 0;
   margin: 0 auto;
   display: grid;
@@ -76,11 +76,11 @@ body {
 h1 {
   text-align: center;
   font-size: 54px;
-}
+} */
 
 /* modal */
 
-#modal {
+/* #modal {
   display: none;
 }
 
@@ -127,10 +127,10 @@ button:hover {
   cursor: pointer;
   transform: translateY(-2px);
   box-shadow: 0px 2px 3px gray;
-}
+} */
 
 /* header elements */
-.navlist {
+/* .navlist {
   padding: 50px;
 }
 
@@ -147,13 +147,13 @@ button:hover {
   padding: 10px;
   margin: 0 auto;
   justify-content: center;
-}
+} */
 
 /* pokedex search */
-.pokedex-filter {
+/* .pokedex-filter {
   display: grid;
   width: 50%;
   padding: 10px;
   margin: 0 auto;
   justify-content: center;
-}
+} */
