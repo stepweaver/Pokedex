@@ -37,7 +37,16 @@
 } */
 
 /* card animation */
-/* .card:hover {
+.card {
+  background: none;
+}
+
+.card-image {
+  height: 180px;
+  width: 180px;
+}
+
+.card:hover {
   animation: bounce 0.5s linear;
   cursor: pointer;
 }
@@ -62,10 +71,10 @@
   100% {
     transform: translateY(0px);
   }
-} */
+}
 
 /* pokedex container */
-/* #pokedex {
+.list-group {
   padding-inline-start: 0;
   margin: 0 auto;
   display: grid;
@@ -73,7 +82,7 @@
   grid-gap: 20px;
 }
 
-h1 {
+/* h1 {
   text-align: center;
   font-size: 54px;
 } */
