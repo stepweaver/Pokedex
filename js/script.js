@@ -17,7 +17,7 @@ let fetchPokemon = async () => {
 // displays pokemon in pokedex container.
 let displayPokemon = (pokemon) => {
   let pokemonHTMLString = pokemon.map( pokeman => `
-  <li class="list-group-item text-light text-center text-capitalize btn btn-secondary bg-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="selectPokemon(${pokeman.id})">
+  <li class="card list-group-item text-light text-center text-capitalize btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="selectPokemon(${pokeman.id})">
     <img class="card-image" src="${pokeman.image}" />
     <h2 class="card-title">${pokeman.name}</h2>
   </li>
@@ -47,11 +47,11 @@ function showModal(pokeman) {
   modalTitle.empty();
   modalBody.empty();
 
-  let nameElement = ("<h1>" + pokeman.name + "</h1>");
-  let imageElement = $('<img class="modal-img" style="width:50% height:50%">');
+  let nameElement = ("<h1>" + pokeman.id + "  " + pokeman.name + "</h1>");
+  let imageElement = $('<img class="modal-img" style="width:50%">');
   imageElement.attr("src", image);
-  let heightElement = $("<p>" + "Height: " + pokeman.height + "</p>");
-  let weightElement = $("<p>" + "Weight: " + pokeman.weight + "</p>");
+  let heightElement = $("<p>" + "Height: " + pokeman.height + " dm </p>");
+  let weightElement = $("<p>" + "Weight: " + pokeman.weight + " hg </p>");
   let typesElement = $("<p>" + "Type: " + type + "</p>");
 
   modalTitle.append(nameElement);
