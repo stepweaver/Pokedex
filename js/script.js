@@ -77,8 +77,8 @@ function showModal(pokeman) {
 // };
 
 let hideModal = () => {
-  let modal = document.querySelector('#modal');
-  modal.classList.remove('visible');
+  let modal = document.getElementByID('pokedex');
+  modal.classList.remove('modal');
 };
 
 window.addEventListener('keydown', (e) => {
