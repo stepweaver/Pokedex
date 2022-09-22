@@ -76,20 +76,20 @@ function showModal(pokeman) {
 //     pokedex.innerHTML = htmlString + pokedex.innerHTML;
 // };
 
-let hideModal = () => {
-  let modal = document.getElementByID('pokedex');
-  modal.classList.remove('modal');
-};
+// let hideModal = () => {
+//   let modal = document.getElementByID('pokedex');
+//   modal.classList.remove('modal');
+// };
 
-window.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    hideModal();
-  };
-});
+// window.addEventListener('keydown', (e) => {
+//   if (e.key === 'Escape') {
+//     hideModal();
+//   };
+// });
 
-window.addEventListener('click', (e) => {
-  if (document.querySelector('#modal'))
-  hideModal();
-}, true);
+// window.addEventListener('click', (e) => {
+//   if (document.querySelector('#modal'))
+//   hideModal();
+// }, true);
 
 fetchPokemon();
