@@ -61,6 +61,8 @@ function showModal(pokeman) {
   modalBody.append(typesElement);
 };
 
+fetchPokemon();
+
 // let showModal = (pokeman) => {
 //   let type = pokeman.types.map( type => type.type.name).join(', ');
 //   let image = pokeman.sprites['front_default'];
@@ -91,5 +93,3 @@ function showModal(pokeman) {
 //   if (document.querySelector('#modal'))
 //   hideModal();
 // }, true);
-
-fetchPokemon();
