@@ -1,6 +1,6 @@
 # simple-js-app
 
-The objective of this project was to build a Pokedex, using the pokeapi [Link](https://pokeapi.co/).
+The objective of this project was to build a Pokedex using the pokeapi [Link](https://pokeapi.co/).
 
 The first 150 Pokemon are pulled in using fetch API and arranged in a grid.
 
