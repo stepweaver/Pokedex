@@ -1,15 +1,18 @@
 let pokedex = document.querySelector('.list-group');
 let pokeCache = {};
+let page = 1;
 
 // fetch to get data from pokeapi.
-let fetchPokemon = async () => {
-  let url = `https://pokeapi.co/api/v2/pokemon/?limit=150`;
+let fetchPokemon = async (page) => {
+  let limit = 20;
+  let offset = (page - 1) * limit;
+  let url = `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`;
   let res = await fetch(url);
   let data = await res.json();
   let pokemon = data.results.map((result, index) => ({
-    ... result, // ... result will simply pass everything from the api through to the object.
-    id: index + 1,
-    image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`
+    ... result,
+    id: index + offset + 1,
+    image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + offset + 1}.png`
   }));
   displayPokemon(pokemon);
 };
@@ -22,7 +25,7 @@ let displayPokemon = (pokemon) => {
     <h2 class="card-title">${pokeman.name}</h2>
   </li>
   `).join('');
-  pokedex.innerHTML = pokemonHTMLString;
+  pokedex.innerHTML += pokemonHTMLString;
 };
 
 let selectPokemon = async (id) => {
@@ -61,35 +64,14 @@ function showModal(pokeman) {
   modalBody.append(typesElement);
 };
 
-fetchPokemon();
+// Initial fetch for the first page.
+fetchPokemon(page);
 
-// let showModal = (pokeman) => {
-//   let type = pokeman.types.map( type => type.type.name).join(', ');
-//   let image = pokeman.sprites['front_default'];
-//   let htmlString = `
-//     <div id="modal" class="visible">
-//       <button id="modal-close" onclick="hideModal()">Close</button>
-//     <div class="modal">
-//       <img class="card-image" src="${image}" />
-//       <h2 class="card-title"><big>#${pokeman.id}</big> ${pokeman.name}</h2>
-//       <p><small>Height: </small>${pokeman.height} dm | <small>Weight: </small>${pokeman.weight} hg | <small>Type: </small>${type}
-//     </div>
-//     </div>`;
-//     pokedex.innerHTML = htmlString + pokedex.innerHTML;
-// };
-
-// let hideModal = () => {
-//   let modal = document.getElementByID('pokedex');
-//   modal.classList.remove('modal');
-// };
-
-// window.addEventListener('keydown', (e) => {
-//   if (e.key === 'Escape') {
-//     hideModal();
-//   };
-// });
-
-// window.addEventListener('click', (e) => {
-//   if (document.querySelector('#modal'))
-//   hideModal();
-// }, true);
+// Event listener to detect when the user has scrolled to the bottom of the page.
+window.addEventListener('scroll', () => {
+  const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+  if (scrollTop + clientHeight >= scrollHeight - 5) {
+    page++;
+    fetchPokemon(page);
+  }
+});
