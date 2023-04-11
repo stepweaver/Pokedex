@@ -8,7 +8,7 @@ Majority of styles are done using Bootstrap.
 
 Resize the browser window to see how the Navbar changes format when reaching the appropriate threshold.
 
-Resize the browswer window to see how the pokedex grid resizes and repositions for narrower screens.
+Resize the browser window to see how the pokedex grid resizes and repositions for narrower screens.
 
 Hover over a pokemon to see animation and color change.
 
@@ -16,5 +16,5 @@ Click on a pokemon to see modal display details about that pokemon.
 
 Click the "X", outside of the modal, or press the escape key to close the modal.
 
-The Pokedex Sarch and Navbar links do not work at this time.
+The Pokedex Search and Navbar links do not work at this time.
 
